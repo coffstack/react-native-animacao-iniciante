@@ -8,7 +8,7 @@ import {
   Text,
 } from "react-native";
 
-import Reanimated, { SlideInUp } from "react-native-reanimated";
+import Reanimated, { SlideInUp, SlideOutDown } from "react-native-reanimated";
 
 import { languageData } from "./data";
 
@@ -33,6 +33,7 @@ export function LanguageList() {
           <Reanimated.Image
             key={`image-${index}`}
             entering={SlideInUp.duration(500).springify()}
+            exiting={SlideOutDown.delay(150).duration(500)}
             source={item.image}
             style={[styles.image]}
           />
