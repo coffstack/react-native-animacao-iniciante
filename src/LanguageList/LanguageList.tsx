@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Dimensions, StyleSheet, View, Text } from "react-native";
 
 import Reanimated, {
+  FadeInDown,
+  FadeOutUp,
   SlideInRight,
   SlideInUp,
   SlideOutLeft,
@@ -42,7 +44,13 @@ export function LanguageList() {
             source={item.image}
             style={[styles.image]}
           />
-          <Text style={styles.itemText}>{item.name}</Text>
+          <Reanimated.Text
+            entering={FadeInDown.delay(duration / 2).duration(duration)}
+            style={styles.itemText}
+            exiting={FadeOutUp.duration(duration)}
+          >
+            {item.name}
+          </Reanimated.Text>
         </Reanimated.View>
       </View>
     );
