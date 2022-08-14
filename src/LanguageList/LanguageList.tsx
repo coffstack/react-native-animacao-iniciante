@@ -8,6 +8,8 @@ import {
   Text,
 } from "react-native";
 
+import Reanimated, { SlideInUp } from "react-native-reanimated";
+
 import { languageData } from "./data";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -28,7 +30,12 @@ export function LanguageList() {
     return (
       <View style={styles.item}>
         <View style={styles.itemContent}>
-          <Image source={item.image} style={[styles.image]} />
+          <Reanimated.Image
+            key={`image-${index}`}
+            entering={SlideInUp.duration(500).springify()}
+            source={item.image}
+            style={[styles.image]}
+          />
           <Text style={styles.itemText}>{item.name}</Text>
         </View>
       </View>
