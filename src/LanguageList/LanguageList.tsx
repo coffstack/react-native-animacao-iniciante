@@ -8,9 +8,21 @@ import {
   Text,
 } from "react-native";
 
+import Reanimated, {
+  FadeInDown,
+  FadeInUp,
+  FadeOutDown,
+  SlideInRight,
+  SlideInUp,
+  SlideOutDown,
+  SlideOutLeft,
+} from "react-native-reanimated";
+
 import { languageData } from "./data";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
+
+const duration = 500;
 
 export function LanguageList() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,10 +39,29 @@ export function LanguageList() {
     const item = languageData[index];
     return (
       <View style={styles.item}>
-        <View style={styles.itemContent}>
-          <Image source={item.image} style={[styles.image]} />
-          <Text style={styles.itemText}>{item.name}</Text>
-        </View>
+        <Reanimated.View
+          key={`content-${index}`}
+          entering={SlideInRight.duration(duration)}
+          exiting={SlideOutLeft.duration(duration)}
+          style={styles.itemContent}
+        >
+          <Reanimated.Image
+            key={`image-${index}`}
+            entering={SlideInUp.delay(duration / 2)
+              .duration(duration)
+              .springify()}
+            source={item.image}
+            style={[styles.image]}
+          />
+          <Reanimated.Text
+            entering={FadeInUp.delay(duration / 2).duration(duration)}
+            exiting={FadeOutDown.duration(duration)}
+            key={`text-${index}`}
+            style={styles.itemText}
+          >
+            {item.name}
+          </Reanimated.Text>
+        </Reanimated.View>
       </View>
     );
   }
