@@ -1,6 +1,6 @@
 <div align="center">
 <img src="docs/images/cover.jpg"  width="500" alt="Logo" />
-<h2>Layout Animation com React Native Reanimated 2
+<h2>Layout Animations com React Native Reanimated 2
 </h2>
 
 <br>
@@ -18,8 +18,8 @@ Essa é a forma mais simples para você começar a entender e utilizar animaçõ
 
 ## Redes Sociais:
 
-Instagram: @coffstack https://www.instagram.com/coffstack/
-TikTok: @coffstack https://www.tiktok.com/@coffstack
-Twitter: @coffstack https://twitter.com/coffstack
-Blog: https://blog.coffstack.com/
-Instagram: @lucasgar6 https://www.instagram.com/lucasgar6/
+- Instagram: @coffstack https://www.instagram.com/coffstack/
+- TikTok: @coffstack https://www.tiktok.com/@coffstack
+- Twitter: @coffstack https://twitter.com/coffstack
+- Blog/Artigos: https://blog.coffstack.com/
+- Instagram: @lucasgar6 https://www.instagram.com/lucasgar6/
